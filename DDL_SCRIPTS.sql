@@ -1,10 +1,13 @@
 /*  
-	Author Sangeeta Palankar
+	Author Veera Swapna Raga
     date 28/12/2022
     Database Creation
 */
 CREATE DATABASE KBMS_PROJECT;
 USE KBMS_PROJECT;
+drop table If exists order_details;
+drop table If exists product;
+drop table If exists user;
 CREATE TABLE USER
 (
   NAME VARCHAR(50) NOT NULL ,
@@ -25,8 +28,8 @@ CREATE TABLE PRODUCT
    PRODUCT_COUNT INT,
    TOTAL_STOCK INT NOT NULL,
    BEST_BEFORE DATE,
-   PRICE_PER_UNIT INT NOT NULL ,
-) auto_increment=10001;
+   PRICE_PER_UNIT INT NOT NULL 
+)AUTO_INCREMENT = 10001;
 
 CREATE TABLE ORDER_DETAILS
 (
