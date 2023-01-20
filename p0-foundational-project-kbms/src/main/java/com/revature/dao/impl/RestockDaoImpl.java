@@ -25,11 +25,6 @@ public class RestockDaoImpl extends Thread implements RestockDao {
 
 	public void run() {
 
-		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			// logger.info("Driver Loaded");
-			con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306" + "/kbms_project", "root", "Veera@441");
-			// logger.info("Connection Established");
 			try {
 				con = DatabaseConnection.getConnection();
 				// logger.info("Connection Established");
@@ -44,8 +39,8 @@ public class RestockDaoImpl extends Thread implements RestockDao {
 						logger.info("stock available is  : " + res.getInt("product_count"));
 						logger.info("threshold level of the product is : " + res.getInt("Threshold_level"));
 						// logger.info("stock initial is : " + res.getInt("total_stock"));
-						int a = res.getInt("product_count");
-						a = res.getInt("product_count") + 10;
+						int a = res.getInt("product_count") + 10;
+						//a = res.getInt("product_count") + 10;
 						
 						PreparedStatement ps = con.prepareStatement(Constants.UPDATE_QUERY);
 
@@ -56,14 +51,11 @@ public class RestockDaoImpl extends Thread implements RestockDao {
 						logger.info("***********");
 					}
 				}
-				logger.info(count);
 
 			} catch (SQLException e) {
 				logger.error(e.getMessage());
 			}
-		} catch (ClassNotFoundException | SQLException e) {
-			logger.error(e.getMessage());
-		}
+		
 		try
 
 		{
