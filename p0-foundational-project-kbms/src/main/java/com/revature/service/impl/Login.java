@@ -6,16 +6,20 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
 
+import org.apache.log4j.Logger;
+
 import com.revature.config.DatabaseConnection;
+
 import com.revature.model.RestockApplication;
 
 public class Login {
-	 
+	private static final Logger logger = Logger.getLogger(Login.class);
 	public static void login() throws SQLException {
 		Connection con = DatabaseConnection.getConnection();
-		RestockApplication m= new RestockApplication();
+		//RestockApplication m= new RestockApplication();
 		Statement stmt = con.createStatement();
 		// Get input from user
+		logger.info("**********please login**********");
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Username: ");
 		String username = sc.nextLine();
@@ -25,7 +29,7 @@ public class Login {
 		try {
 
 			// Execute a query
-			System.out.println("Checking credentials...");
+			logger.info("Checking credentials...");
 
 			String sql;
 			sql = "SELECT * FROM customer WHERE customer_name = '" + username + "' AND password = '" + password + "'";
@@ -37,12 +41,12 @@ public class Login {
 				// Retrieve by column name
 				String customerName = rs.getString("customer_name");
 				String customerPassword = rs.getString("password");
-
+				logger.info("\n*****Welcome to Kitchen Basket Management System******");
 				// Display values
-				System.out.println("Welcome, " + customerName + "!");
-				m.menu();
+				logger.info("Welcome, " + customerName + "!");
+				RestockApplication.menu();
 			} else {
-				System.out.println("Invalid username or password.");
+				logger.info("Invalid username or password.");
 			}
 			// Clean-up environment
 			rs.close();
