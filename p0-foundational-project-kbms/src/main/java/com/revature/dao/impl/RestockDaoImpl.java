@@ -20,6 +20,7 @@ public class RestockDaoImpl extends Thread implements RestockDao {
 	Connection con = null;
 	Statement stm = null;
 	ResultSet res = null;
+	public static int count = 0;
 	Scanner sc = new Scanner(System.in);
 
 	public void run() {
@@ -36,7 +37,7 @@ public class RestockDaoImpl extends Thread implements RestockDao {
 				stm = con.createStatement();
 				res = stm.executeQuery(showQuery);
 				while (res.next()) {
-
+					count+=1;
 					if (res.getInt("product_count") < res.getInt("threshold_level")) {
 						logger.info("product Id is : " + res.getInt("product_id"));
 						logger.info("product name is  : " + res.getString("product_name") + " restock needed");
@@ -55,6 +56,7 @@ public class RestockDaoImpl extends Thread implements RestockDao {
 						logger.info("***********");
 					}
 				}
+				logger.info(count);
 
 			} catch (SQLException e) {
 				logger.error(e.getMessage());
