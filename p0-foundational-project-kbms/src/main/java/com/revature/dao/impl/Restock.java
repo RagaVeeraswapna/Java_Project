@@ -25,7 +25,7 @@ public class Restock extends Thread implements RestockDao {
 	public void run() {
 
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			// logger.info("Driver Loaded");
 			con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306" + "/kbms_project", "root", "Veera@441");
 			// logger.info("Connection Established");
