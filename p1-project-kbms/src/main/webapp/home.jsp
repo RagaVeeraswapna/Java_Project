@@ -57,7 +57,7 @@
         </div>
 
         <nav class="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
-            <a href="landing.jsp" class="navbar-brand ms-4 ms-lg-0">
+            <a href="index.jsp" class="navbar-brand ms-4 ms-lg-0">
                 <h1 class="fw-bold text-primary m-0">Natures<span class="text-secondary">Best</span></h1>
             </a>
             <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -65,13 +65,14 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto p-4 p-lg-0">
-                    <a href="landing.jsp" class="nav-item nav-link">Home</a>
+                    <a href="home.jsp" class="nav-item nav-link">Home</a>
                     <a href="about.jsp" class="nav-item nav-link">About Us</a>
                     <a href="product.jsp" class="nav-item nav-link active">Products</a>
+                   
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                         <div class="dropdown-menu m-0">
-                            <a href="Restock.jsp" class="dropdown-item">Restock</a>
+                           <a href="Restock.jsp" class="dropdown-item">Restock</a>
                             <a href="blog.jsp" class="dropdown-item">Blog Grid</a>
                             <a href="feature.jsp" class="dropdown-item">Our Features</a>
                             <a href="testimonial.jsp" class="dropdown-item">Testimonial</a>
@@ -83,13 +84,13 @@
                     <a class="btn-sm-square bg-white rounded-circle ms-3" href="">
                         <small class="fa fa-search text-body"></small>
                     </a>
-                     <div class="nav-item dropdown">
+         <div class="nav-item dropdown">
                       <a href="#"  data-bs-toggle="dropdown"
                      class="btn-sm-square bg-white rounded-circle ms-3">
                       <small class="fa fa-user text-body"></small>
                       </a>
                       <div class="dropdown-menu m-0">
-                          <a href="landing.jsp" class="dropdown-item">Logout</a>
+                          <a href="index.jsp" class="dropdown-item">Logout</a>
                       </div>
                   </div>
                     <a class="btn-sm-square bg-white rounded-circle ms-3" href="">
